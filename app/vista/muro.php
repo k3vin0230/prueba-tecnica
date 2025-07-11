@@ -27,6 +27,7 @@ if (!is_array($comentarios)) {
 </form>
 <hr>
 
+
 <script>
 // Enviar nuevo comentario
 document.getElementById('form-comentario').addEventListener('submit', async function(e) {
@@ -38,7 +39,7 @@ document.getElementById('form-comentario').addEventListener('submit', async func
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            user_id: 7,
+            user_id: 4,
             comment: texto
         })
     });

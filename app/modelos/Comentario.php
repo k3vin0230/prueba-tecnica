@@ -10,13 +10,13 @@ class UserComment
     }
 
     public function crear($user_id, $comment)
-{
-    $stmt = $this->pdo->prepare("
-        INSERT INTO user_comment (user, coment_text) 
-        VALUES (?, ?)
-    ");
-    return $stmt->execute([$user_id, $comment]);
-}
+    {
+        $stmt = $this->pdo->prepare(
+            "INSERT INTO user_comment (user, coment_text)
+                VALUES (?, ?)"
+        );
+        return $stmt->execute([$user_id, $comment]);
+    }
 
 
     // Obtener total de likes por usuario, solo si tiene comentarios

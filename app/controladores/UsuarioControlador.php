@@ -9,7 +9,7 @@ class UserController
     public function __construct($pdo)
     {
         $this->pdo = $pdo; 
-        $this->userModel = new User($pdo);;
+        $this->userModel = new User($pdo);
     }
 
     // Crear nuevo usuario

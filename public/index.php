@@ -22,7 +22,6 @@ switch ($controlador) {
         $instanciaControlador = new UserController($pdo);
         break;
     case 'comment':
-        require_once __DIR__ . '/../app/controladores/ComentarioControlador.php';
          $instanciaControlador = new CommentController($pdo);
         break;
     default:

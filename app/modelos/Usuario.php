@@ -12,11 +12,29 @@ class User
     // Crear usuario 
     public function create($fullname, $email, $pass, $openid)
     {
-        $stmt = $this->pdo->prepare("
+        try{
+            $stmt = $this->pdo->prepare("
             INSERT INTO user (fullname, email, pass, openid) 
-            VALUES (?, ?, ?, ?)
-        ");
-        return $stmt->execute([$fullname, $email, $pass, $openid]);
+            VALUES (?, ?, ?, ?)"
+            );
+            return $stmt->execute([$fullname, $email, $pass, $openid]);
+        } catch (PDOException $e) {
+            if ($e->getCode() == 23000) { // Error de integridad (duplicado)
+                $msg = $e->getMessage();
+
+                if (str_contains($msg, 'email')) {
+                    throw new Exception('El correo electrónico ya está registrado.');
+                } elseif (str_contains($msg, 'openid')) {
+                    throw new Exception('El usuario ya ha iniciado sesión con Google anteriormente.');
+                } else {
+                    throw new Exception('Dato duplicado no permitido.');
+                }
+            }
+
+            // Otro error de base de datos
+            throw new Exception('Error al crear el usuario: ' . $e->getMessage());
+        }
+        
     }
 
     // Obtener todos los usuarios
