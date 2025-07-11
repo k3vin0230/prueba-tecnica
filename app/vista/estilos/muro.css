@@ -1,0 +1,96 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ebee;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+form {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #155dbe;
+}
+
+.comentario {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    position: relative;
+}
+
+.comentario strong {
+    font-size: 16px;
+    color: #1877f2;
+}
+
+.comentario p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.likes {
+    font-size: 14px;
+    color: #666;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.like-btn {
+    background-color: #f0f2f5;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4b4f56;
+}
+
+.like-btn:hover {
+    background-color: #e4e6eb;
+}
